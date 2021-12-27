@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=False;database=inventory;passwo"& _ 
-            "rd=ferdinand")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("persistsecurityinfo=False;server=localhost;user id=root;password=123456;database="& _ 
+            "inventory")>  _
         Public ReadOnly Property inventoryConnectionString() As String
             Get
                 Return CType(Me("inventoryConnectionString"),String)
