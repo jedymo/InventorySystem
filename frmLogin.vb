@@ -14,7 +14,7 @@ Public Class frmLogin
             UserAuth.SignIn(UsernameTextBox.Text.Trim, PasswordTextBox.Text.Trim)
             If UserAuth.State = AuthState.SignedIn Then
                 MessageBox.Show("Signed in!")
-                Me.Close()
+                Me.Dispose()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -23,7 +23,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
-        Me.Close()
+        Me.Dispose()
     End Sub
 
 End Class

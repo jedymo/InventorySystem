@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmProductItem
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,27 @@ Partial Class frmProductItem
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.txtItemCode = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
+        Me.lblQuantity = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.cmbCategory = New System.Windows.Forms.ComboBox()
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InventoryDataSet = New InventorySystem.inventoryDataSet()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.CategoriesTableAdapter = New InventorySystem.inventoryDataSetTableAdapters.categoriesTableAdapter()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -90,63 +97,92 @@ Partial Class frmProductItem
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Quantity"
         '
-        'TextBox1
+        'txtItemCode
         '
-        Me.TextBox1.Location = New System.Drawing.Point(222, 43)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(323, 26)
-        Me.TextBox1.TabIndex = 6
+        Me.txtItemCode.Location = New System.Drawing.Point(222, 43)
+        Me.txtItemCode.Name = "txtItemCode"
+        Me.txtItemCode.Size = New System.Drawing.Size(323, 26)
+        Me.txtItemCode.TabIndex = 6
         '
-        'TextBox2
+        'txtName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(222, 87)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(323, 26)
-        Me.TextBox2.TabIndex = 7
+        Me.txtName.Location = New System.Drawing.Point(222, 87)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(323, 26)
+        Me.txtName.TabIndex = 7
         '
-        'TextBox3
+        'txtDescription
         '
-        Me.TextBox3.Location = New System.Drawing.Point(222, 125)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(323, 74)
-        Me.TextBox3.TabIndex = 8
+        Me.txtDescription.Location = New System.Drawing.Point(222, 125)
+        Me.txtDescription.Multiline = True
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(323, 74)
+        Me.txtDescription.TabIndex = 8
         '
-        'Label7
+        'lblQuantity
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(218, 215)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(113, 20)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Quantity Value"
+        Me.lblQuantity.AutoSize = True
+        Me.lblQuantity.Location = New System.Drawing.Point(218, 215)
+        Me.lblQuantity.Name = "lblQuantity"
+        Me.lblQuantity.Size = New System.Drawing.Size(18, 20)
+        Me.lblQuantity.TabIndex = 9
+        Me.lblQuantity.Text = "0"
         '
-        'TextBox4
+        'txtPrice
         '
-        Me.TextBox4.Location = New System.Drawing.Point(222, 258)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(323, 26)
-        Me.TextBox4.TabIndex = 10
+        Me.txtPrice.Location = New System.Drawing.Point(222, 258)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(323, 26)
+        Me.txtPrice.TabIndex = 10
+        Me.txtPrice.Text = "0"
         '
-        'ComboBox1
+        'cmbCategory
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(222, 306)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(323, 28)
-        Me.ComboBox1.TabIndex = 11
+        Me.cmbCategory.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CategoriesBindingSource, "name", True))
+        Me.cmbCategory.DataSource = Me.CategoriesBindingSource
+        Me.cmbCategory.DisplayMember = "name"
+        Me.cmbCategory.FormattingEnabled = True
+        Me.cmbCategory.Location = New System.Drawing.Point(222, 306)
+        Me.cmbCategory.Name = "cmbCategory"
+        Me.cmbCategory.Size = New System.Drawing.Size(323, 28)
+        Me.cmbCategory.TabIndex = 11
+        Me.cmbCategory.ValueMember = "id"
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "categories"
+        Me.CategoriesBindingSource.DataSource = Me.InventoryDataSet
+        '
+        'InventoryDataSet
+        '
+        Me.InventoryDataSet.DataSetName = "inventoryDataSet"
+        Me.InventoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(319, 385)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(101, 29)
+        Me.btnSave.TabIndex = 12
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
         '
         'frmProductItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(685, 391)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(685, 440)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.cmbCategory)
+        Me.Controls.Add(Me.txtPrice)
+        Me.Controls.Add(Me.lblQuantity)
+        Me.Controls.Add(Me.txtDescription)
+        Me.Controls.Add(Me.txtName)
+        Me.Controls.Add(Me.txtItemCode)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -155,6 +191,8 @@ Partial Class frmProductItem
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmProductItem"
         Me.Text = "Product Item"
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,10 +204,14 @@ Partial Class frmProductItem
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtItemCode As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtDescription As TextBox
+    Friend WithEvents lblQuantity As Label
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents cmbCategory As ComboBox
+    Friend WithEvents btnSave As Button
+    Friend WithEvents InventoryDataSet As inventoryDataSet
+    Friend WithEvents CategoriesBindingSource As BindingSource
+    Friend WithEvents CategoriesTableAdapter As inventoryDataSetTableAdapters.categoriesTableAdapter
 End Class

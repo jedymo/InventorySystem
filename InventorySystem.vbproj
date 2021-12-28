@@ -54,7 +54,6 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -98,11 +97,17 @@
     <Compile Include="Auth.vb" />
     <Compile Include="DatabaseManager.vb" />
     <Compile Include="Encryption.vb" />
-    <Compile Include="frmCategoryItem.Designer.vb">
-      <DependentUpon>frmCategoryItem.vb</DependentUpon>
+    <Compile Include="frmCategories.Designer.vb">
+      <DependentUpon>frmCategories.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryItem.vb">
+    <Compile Include="frmCategories.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlGuest.Designer.vb">
+      <DependentUpon>frmControlGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlGuest.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="frmDashboard.Designer.vb">
       <DependentUpon>frmDashboard.vb</DependentUpon>
@@ -140,19 +145,19 @@
     <Compile Include="frmSplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSupplierDetail.Designer.vb">
-      <DependentUpon>frmSupplierDetail.vb</DependentUpon>
+    <Compile Include="frmSuppliers.Designer.vb">
+      <DependentUpon>frmSuppliers.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSupplierDetail.vb">
+    <Compile Include="frmSuppliers.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="inventoryDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>inventoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="inventoryDataSet.vb">
       <DependentUpon>inventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inventoryDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -173,8 +178,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCategoryItem.resx">
-      <DependentUpon>frmCategoryItem.vb</DependentUpon>
+    <EmbeddedResource Include="frmCategories.resx">
+      <DependentUpon>frmCategories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlGuest.resx">
+      <DependentUpon>frmControlGuest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
@@ -194,8 +202,8 @@
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSupplierDetail.resx">
-      <DependentUpon>frmSupplierDetail.vb</DependentUpon>
+    <EmbeddedResource Include="frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -211,11 +219,21 @@
     </None>
     <None Include="inventoryDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>inventoryDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="inventoryDataSet.xss">
       <DependentUpon>inventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="inventoryDataSet1.xsc">
+      <DependentUpon>inventoryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="inventoryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inventoryDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="inventoryDataSet1.xss">
+      <DependentUpon>inventoryDataSet1.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

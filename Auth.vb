@@ -10,8 +10,8 @@ Public Class Auth
 
 
     Private Function GetSalt(username As String) As String
-        Dim ad As New inventoryDataSetTableAdapters.saltTableAdapter
-        Dim dt As New inventoryDataSet.saltDataTable
+        Dim ad As New inventoryDataSetTableAdapters.prc_select_saltTableAdapter
+        Dim dt As New inventoryDataSet.prc_select_saltDataTable
 
         ad.Fill(dt, username)
         If dt.Rows.Count = 0 Then
@@ -29,8 +29,8 @@ Public Class Auth
         If salt = "" Then
             Return
         End If
-        Dim ad As New inventoryDataSetTableAdapters.authenticateTableAdapter
-        Dim dt As New inventoryDataSet.authenticateDataTable
+        Dim ad As New inventoryDataSetTableAdapters.prc_authenticateTableAdapter
+        Dim dt As New inventoryDataSet.prc_authenticateDataTable
 
         ad.Fill(dt, username, hashedAndSaltedPassword)
 

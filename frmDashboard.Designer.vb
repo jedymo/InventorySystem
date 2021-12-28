@@ -23,15 +23,15 @@ Partial Class frmDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.AccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogInToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnCategories = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnSuppliers = New System.Windows.Forms.Button()
+        Me.FrmControlGuest1 = New InventorySystem.frmControlGuest()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,36 +39,49 @@ Partial Class frmDashboard
         '
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 33)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'AboutToolStripMenuItem
+        'AccountToolStripMenuItem
         '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(78, 29)
-        Me.AboutToolStripMenuItem.Text = "About"
+        Me.AccountToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInToolStripMenuItem, Me.LogOutToolStripMenuItem})
+        Me.AccountToolStripMenuItem.Name = "AccountToolStripMenuItem"
+        Me.AccountToolStripMenuItem.Size = New System.Drawing.Size(93, 29)
+        Me.AccountToolStripMenuItem.Text = "Account"
         '
-        'Button1
+        'LogInToolStripMenuItem
         '
-        Me.Button1.Location = New System.Drawing.Point(231, 99)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 105)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Categories"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LogInToolStripMenuItem.Name = "LogInToolStripMenuItem"
+        Me.LogInToolStripMenuItem.Size = New System.Drawing.Size(179, 34)
+        Me.LogInToolStripMenuItem.Text = "Log In"
         '
-        'Button2
+        'LogOutToolStripMenuItem
         '
-        Me.Button2.Location = New System.Drawing.Point(45, 99)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(141, 105)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Items"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(179, 34)
+        Me.LogOutToolStripMenuItem.Text = "Log Out"
+        '
+        'btnCategories
+        '
+        Me.btnCategories.Location = New System.Drawing.Point(231, 99)
+        Me.btnCategories.Name = "btnCategories"
+        Me.btnCategories.Size = New System.Drawing.Size(141, 105)
+        Me.btnCategories.TabIndex = 1
+        Me.btnCategories.Text = "Categories"
+        Me.btnCategories.UseVisualStyleBackColor = True
+        '
+        'btnItems
+        '
+        Me.btnItems.Location = New System.Drawing.Point(45, 99)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Size = New System.Drawing.Size(141, 105)
+        Me.btnItems.TabIndex = 2
+        Me.btnItems.Text = "Items"
+        Me.btnItems.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -88,49 +101,37 @@ Partial Class frmDashboard
         Me.Button4.Text = "Users"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnSuppliers
         '
-        Me.Button5.Location = New System.Drawing.Point(231, 264)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(141, 105)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Suppliers"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnSuppliers.Location = New System.Drawing.Point(231, 264)
+        Me.btnSuppliers.Name = "btnSuppliers"
+        Me.btnSuppliers.Size = New System.Drawing.Size(141, 105)
+        Me.btnSuppliers.TabIndex = 5
+        Me.btnSuppliers.Text = "Suppliers"
+        Me.btnSuppliers.UseVisualStyleBackColor = True
         '
-        'AccountToolStripMenuItem
+        'FrmControlGuest1
         '
-        Me.AccountToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInToolStripMenuItem, Me.LogOutToolStripMenuItem})
-        Me.AccountToolStripMenuItem.Name = "AccountToolStripMenuItem"
-        Me.AccountToolStripMenuItem.Size = New System.Drawing.Size(93, 29)
-        Me.AccountToolStripMenuItem.Text = "Account"
-        '
-        'LogInToolStripMenuItem
-        '
-        Me.LogInToolStripMenuItem.Name = "LogInToolStripMenuItem"
-        Me.LogInToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.LogInToolStripMenuItem.Text = "Log In"
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.LogOutToolStripMenuItem.Text = "Log Out"
+        Me.FrmControlGuest1.Location = New System.Drawing.Point(0, 36)
+        Me.FrmControlGuest1.Name = "FrmControlGuest1"
+        Me.FrmControlGuest1.Size = New System.Drawing.Size(800, 412)
+        Me.FrmControlGuest1.TabIndex = 6
         '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.FrmControlGuest1)
+        Me.Controls.Add(Me.btnSuppliers)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnItems)
+        Me.Controls.Add(Me.btnCategories)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmDashboard"
         Me.Text = "frmDashboard"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -139,13 +140,13 @@ Partial Class frmDashboard
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents AccountToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogInToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnCategories As Button
+    Friend WithEvents btnItems As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents btnSuppliers As Button
+    Friend WithEvents FrmControlGuest1 As frmControlGuest
 End Class
