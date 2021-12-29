@@ -172,6 +172,18 @@
     <Compile Include="frmSuppliers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUserDetail.Designer.vb">
+      <DependentUpon>frmUserDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.vb">
+      <DependentUpon>frmUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="inventoryDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliers.resx">
       <DependentUpon>frmSuppliers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserDetail.resx">
+      <DependentUpon>frmUserDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
