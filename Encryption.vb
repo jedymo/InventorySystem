@@ -4,7 +4,6 @@
         Return EncryptString(str)
     End Function
 
-
     Public Shared Function GenerateSalt() As String
         Using cryptoServiceProvider As New Security.Cryptography.RNGCryptoServiceProvider
             Dim sb As New Text.StringBuilder

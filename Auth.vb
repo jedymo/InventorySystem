@@ -1,13 +1,10 @@
-﻿
-
-Public Enum AuthState
+﻿Public Enum AuthState
     SignedIn
     SignedOut
 End Enum
 
 Public Class Auth
     Property State As AuthState = AuthState.SignedOut
-
 
     Private Function GetSalt(username As String) As String
         Dim ad As New inventoryDataSetTableAdapters.prc_select_saltTableAdapter
@@ -45,4 +42,3 @@ Public Class Auth
     End Sub
 
 End Class
-

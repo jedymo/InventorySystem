@@ -12,7 +12,6 @@
 
             Dim ad = New inventoryDataSetTableAdapters.productsTableAdapter
 
-
             If id = -1 Then
                 ad.Insert(code, name, description, quantity, price, categoryId, Nothing)
             Else
@@ -37,7 +36,6 @@
         'TODO: This line of code loads data into the 'InventoryDataSet.categories' table. You can move, or remove it, as needed.
         Me.CategoriesTableAdapter.Fill(Me.InventoryDataSet.categories)
 
-
         'If id = -1 Then
         '    Return
         'End If
@@ -60,8 +58,5 @@
         'End Try
 
     End Sub
-
-
-
 
 End Class

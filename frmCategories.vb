@@ -1,4 +1,5 @@
 ﻿Public Class frmCategories
+
     Private Sub frmCategories_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'InventoryDataSet.categories' table. You can move, or remove it, as needed.
         Me.CategoriesTableAdapter.Fill(Me.InventoryDataSet.categories)
@@ -32,4 +33,5 @@
         Next
 
     End Sub
+
 End Class

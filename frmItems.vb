@@ -1,4 +1,5 @@
-﻿Public Class frmProducts
+﻿Public Class frmItems
+
     Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'InventoryDataSet.view_detailed_products' table. You can move, or remove it, as needed.
         Me.View_detailed_productsTableAdapter.Fill(Me.InventoryDataSet.view_detailed_products)
@@ -13,17 +14,12 @@
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
 
-
-
         Dim row = GetCurrentGridViewRow()
 
         Dim productId As Integer = row.Cells(0).Value 'id
 
         Dim da = Me.ProductsTableAdapter1
         Dim product = da.GetData.FindByid(productId)
-
-
-
 
         With frmProductItem
             .id = productId

@@ -3,9 +3,10 @@
     Private Sub LogInToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogInToolStripMenuItem.Click
         frmLogin.ShowDialog()
         If UserAuth.State = AuthState.SignedIn Then
-            FrmControlGuest1.Hide()
+            'FrmControlGuest1.Hide()
+            FrmControlAdmin1.Enabled = True
         Else
-            FrmControlGuest1.Show()
+            FrmControlAdmin1.Enabled = False
         End If
     End Sub
 
@@ -19,23 +20,12 @@
         End If
     End Sub
 
-
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
         UserAuth.SignOut()
-        FrmControlGuest1.Show()
+        FrmControlAdmin1.Enabled = False
     End Sub
 
-    Private Sub btnCategories_Click(sender As Object, e As EventArgs) Handles btnCategories.Click
-        frmCategories.Show()
+    Private Sub FrmControlAdmin1_Load(sender As Object, e As EventArgs) Handles FrmControlAdmin1.Load
+        FrmControlAdmin1.Enabled = False
     End Sub
-
-    Private Sub btnItems_Click(sender As Object, e As EventArgs) Handles btnItems.Click
-        frmProducts.Show()
-    End Sub
-
-    Private Sub btnSuppliers_Click(sender As Object, e As EventArgs) Handles btnSuppliers.Click
-        frmSuppliers.Show()
-    End Sub
-
-
 End Class

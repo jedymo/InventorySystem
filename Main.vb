@@ -1,4 +1,5 @@
 ﻿Module Main
+
     Sub Main()
         Dim password = Encryption.HashString("123456")
         Dim salt = Encryption.GenerateSalt
@@ -11,4 +12,5 @@
         Console.ReadKey()
 
     End Sub
+
 End Module

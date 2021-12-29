@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmProducts
+Partial Class frmItems
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,14 +24,8 @@ Partial Class frmProducts
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.btnView = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
-        Me.category = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.InventoryDataSet = New InventorySystem.inventoryDataSet()
-        Me.ViewdetailedproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.View_detailed_productsTableAdapter = New InventorySystem.inventoryDataSetTableAdapters.view_detailed_productsTableAdapter()
-        Me.ProductsTableAdapter1 = New InventorySystem.inventoryDataSetTableAdapters.productsTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,36 +34,35 @@ Partial Class frmProducts
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateupdatedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ViewdetailedproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InventoryDataSet = New InventorySystem.inventoryDataSet()
+        Me.category = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.View_detailed_productsTableAdapter = New InventorySystem.inventoryDataSetTableAdapters.view_detailed_productsTableAdapter()
+        Me.ProductsTableAdapter1 = New InventorySystem.inventoryDataSetTableAdapters.productsTableAdapter()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewdetailedproductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnView
         '
-        Me.btnView.Location = New System.Drawing.Point(610, 62)
+        Me.btnView.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnView.Location = New System.Drawing.Point(564, 144)
         Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(86, 29)
+        Me.btnView.Size = New System.Drawing.Size(107, 29)
         Me.btnView.TabIndex = 1
-        Me.btnView.Text = "View"
+        Me.btnView.Text = "View Item"
         Me.btnView.UseVisualStyleBackColor = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Location = New System.Drawing.Point(702, 62)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(86, 29)
-        Me.btnDelete.TabIndex = 2
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(518, 62)
+        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAdd.Location = New System.Drawing.Point(472, 144)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(86, 29)
         Me.btnAdd.TabIndex = 3
-        Me.btnAdd.Text = "Add"
+        Me.btnAdd.Text = "Add Item"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'dgvProducts
@@ -77,6 +70,9 @@ Partial Class frmProducts
         Me.dgvProducts.AllowUserToAddRows = False
         Me.dgvProducts.AllowUserToDeleteRows = False
         Me.dgvProducts.AllowUserToOrderColumns = True
+        Me.dgvProducts.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvProducts.AutoGenerateColumns = False
         Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProducts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.CodeDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.CategoryDataGridViewTextBoxColumn, Me.DateupdatedDataGridViewTextBoxColumn})
@@ -89,32 +85,6 @@ Partial Class frmProducts
         Me.dgvProducts.RowTemplate.Height = 28
         Me.dgvProducts.Size = New System.Drawing.Size(775, 259)
         Me.dgvProducts.TabIndex = 4
-        '
-        'category
-        '
-        Me.category.DataPropertyName = "category_id"
-        Me.category.HeaderText = "category"
-        Me.category.MinimumWidth = 8
-        Me.category.Name = "category"
-        Me.category.Width = 150
-        '
-        'InventoryDataSet
-        '
-        Me.InventoryDataSet.DataSetName = "inventoryDataSet"
-        Me.InventoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewdetailedproductsBindingSource
-        '
-        Me.ViewdetailedproductsBindingSource.DataMember = "view_detailed_products"
-        Me.ViewdetailedproductsBindingSource.DataSource = Me.InventoryDataSet
-        '
-        'View_detailed_productsTableAdapter
-        '
-        Me.View_detailed_productsTableAdapter.ClearBeforeFill = True
-        '
-        'ProductsTableAdapter1
-        '
-        Me.ProductsTableAdapter1.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -189,7 +159,43 @@ Partial Class frmProducts
         Me.DateupdatedDataGridViewTextBoxColumn.ReadOnly = True
         Me.DateupdatedDataGridViewTextBoxColumn.Width = 150
         '
-        'frmProducts
+        'ViewdetailedproductsBindingSource
+        '
+        Me.ViewdetailedproductsBindingSource.DataMember = "view_detailed_products"
+        Me.ViewdetailedproductsBindingSource.DataSource = Me.InventoryDataSet
+        '
+        'InventoryDataSet
+        '
+        Me.InventoryDataSet.DataSetName = "inventoryDataSet"
+        Me.InventoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'category
+        '
+        Me.category.DataPropertyName = "category_id"
+        Me.category.HeaderText = "category"
+        Me.category.MinimumWidth = 8
+        Me.category.Name = "category"
+        Me.category.Width = 150
+        '
+        'View_detailed_productsTableAdapter
+        '
+        Me.View_detailed_productsTableAdapter.ClearBeforeFill = True
+        '
+        'ProductsTableAdapter1
+        '
+        Me.ProductsTableAdapter1.ClearBeforeFill = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDelete.Location = New System.Drawing.Point(677, 144)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(111, 29)
+        Me.btnDelete.TabIndex = 2
+        Me.btnDelete.Text = "Delete Item"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'frmItems
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -198,16 +204,16 @@ Partial Class frmProducts
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnView)
-        Me.Name = "frmProducts"
-        Me.Text = "frmProducts"
+        Me.Name = "frmItems"
+        Me.Text = "Items"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewdetailedproductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents btnView As Button
-    Friend WithEvents btnDelete As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents dgvProducts As DataGridView
     Friend WithEvents category As DataGridViewComboBoxColumn
@@ -223,4 +229,5 @@ Partial Class frmProducts
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategoryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateupdatedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnDelete As Button
 End Class
